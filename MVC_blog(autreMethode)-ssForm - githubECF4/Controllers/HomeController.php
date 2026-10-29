@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Controllers;
+//Classe Creation importé 
+use App\Entities\Creation;
 
 class HomeController extends Controller
 {

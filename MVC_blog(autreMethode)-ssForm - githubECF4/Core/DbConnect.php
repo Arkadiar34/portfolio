@@ -27,7 +27,9 @@ class DbConnect
             $this->connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
 
             // Encodage des caractères spéciaux en "utf8"
-            $this->connection->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, "SET NAMES utf8");
+            $this->connection->setAttribute(\Pdo\Mysql::ATTR_INIT_COMMAND, "SET NAMES utf8");
+            //Methode déprécié pour php 7, remplacé par celle actuel
+            /* $this->connection->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, "SET NAMES utf8"); */
         } catch (Exception $e) {
             die('Erreur : ' . $e->getMessage());
         }
